@@ -5,13 +5,12 @@ import java.awt.*;
 public class constantes {
     //cores
 
-    public static final Color BACKGROUND_COLOR=Color.decode("#000001");//black
-    public static final Color X_COLOR=Color.decode("#00FF00");//verde
-   public static final Color O_COLOR=Color.decode("#FFFF00");//amarelo
-    public static final Color BARRA_SUPERIOR=Color.decode("#FFFFFF");//branco
-    public static final Color PLACAR_COLOR=Color.decode("#FFFFFF");//branco
-    public static final Color BOTAO_COLOR_FUNDO=Color.decode("#FFFFFF");//branco
-  //  public static final Color BOARD_COLOR=Color.decode("#000001");
+    public static final Color BLACK_COLOR=Color.decode("#000001");//black
+    public static final Color GREEN_COLOR=Color.decode("#00FF00");//verde
+    public static final Color YELLOW_COLOR=Color.decode("#FFFF00");//amarelo
+    public static final Color WHITE_COLOR=Color.decode("#FFFFFF");//branco
+
+
 
 
     //tamanhos
@@ -26,10 +25,6 @@ public class constantes {
     public static final Dimension DIALOG_SIZE=new Dimension((int)(FRAME_SIZE.width/3),(int)(FRAME_SIZE.height/6) );
 
 
-            /*
-
-
-    public static final Dimension RESULT_DIAOLOG_LABEL*/
 
 
     //valores

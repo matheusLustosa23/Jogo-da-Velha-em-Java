@@ -23,7 +23,7 @@ public class telaGui extends JFrame implements ActionListener {
       setResizable(false);
       setLocationRelativeTo(null);
       setLayout(null);
-      getContentPane().setBackground(constantes.BACKGROUND_COLOR);
+      getContentPane().setBackground(constantes.BLACK_COLOR);
 
       criarResultado();
       board=new  JButton[3][3];
@@ -38,7 +38,7 @@ public class telaGui extends JFrame implements ActionListener {
         //barra superior
         JLabel barraSuperior=new JLabel();
         barraSuperior.setOpaque(true);
-        barraSuperior.setBackground(constantes.BARRA_SUPERIOR);
+        barraSuperior.setBackground(constantes.WHITE_COLOR);
         barraSuperior.setBounds(0,0,constantes.FRAME_SIZE.width,25);
 
         //virar Rótulo
@@ -47,8 +47,8 @@ public class telaGui extends JFrame implements ActionListener {
         virarRotulo.setFont(new Font("Arial",Font.PLAIN,25));
         virarRotulo.setPreferredSize(new Dimension(100,virarRotulo.getPreferredSize().height));
         virarRotulo.setOpaque(true);
-        virarRotulo.setBackground(constantes.X_COLOR);
-        virarRotulo.setForeground(constantes.BACKGROUND_COLOR);
+        virarRotulo.setBackground(constantes.GREEN_COLOR);
+        virarRotulo.setForeground(constantes.BLACK_COLOR);
         virarRotulo.setBounds(
                 (constantes.FRAME_SIZE.width-virarRotulo.getPreferredSize().width)/2,
                 0,
@@ -60,7 +60,7 @@ public class telaGui extends JFrame implements ActionListener {
         placar=new JLabel(constantes.PLACAR_LABEL);
         placar.setFont(new Font("Arial",Font.PLAIN,25));
         placar.setHorizontalAlignment(SwingConstants.CENTER);
-        placar.setForeground(constantes.PLACAR_COLOR);
+        placar.setForeground(constantes.WHITE_COLOR);
         placar.setBounds(0,
                 virarRotulo.getY()+placar.getPreferredSize().height+25,
                 constantes.FRAME_SIZE.width,
@@ -83,9 +83,9 @@ public class telaGui extends JFrame implements ActionListener {
                 JButton botao=new JButton();
                 botao.setFont(new Font("Arial",Font.PLAIN,180));
                 botao.setPreferredSize(constantes.BUTTON_SIZE);
-                botao.setBackground(constantes.BOTAO_COLOR_FUNDO);
+                botao.setBackground(constantes.WHITE_COLOR);
                 botao.addActionListener(this);
-                botao.setBorder(BorderFactory.createLineBorder(constantes.BACKGROUND_COLOR));
+                botao.setBorder(BorderFactory.createLineBorder(constantes.BLACK_COLOR));
 
 
                 //adicionando butões
@@ -97,7 +97,7 @@ public class telaGui extends JFrame implements ActionListener {
         JButton resetarButao=new JButton("Reiniciar");
         resetarButao.setFont(new Font("Arial",Font.PLAIN,24));
         resetarButao.addActionListener(this);
-        resetarButao.setBackground(constantes.X_COLOR);
+        resetarButao.setBackground(constantes.GREEN_COLOR);
         resetarButao.setBounds((constantes.FRAME_SIZE.width-resetarButao.getPreferredSize().width)/2,
                 constantes.FRAME_SIZE.height-100,
                 resetarButao.getPreferredSize().width,
@@ -118,7 +118,7 @@ public class telaGui extends JFrame implements ActionListener {
     }
     public void criarResultado(){
         resultDialog=new JDialog();
-        resultDialog.getContentPane().setBackground(constantes.BACKGROUND_COLOR);
+        resultDialog.getContentPane().setBackground(constantes.BLACK_COLOR);
         resultDialog.setResizable(false);
         resultDialog.setTitle("Resultado");
         resultDialog.setSize(constantes.DIALOG_SIZE);
