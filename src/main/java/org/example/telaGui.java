@@ -131,23 +131,31 @@ public class telaGui extends JFrame implements ActionListener {
             }
         });
 
+        //result label
+        resultLabel=new JLabel();
+        resultLabel.setFont(new Font("Dialog",Font.BOLD,18));
+        resultLabel.setForeground(constantes.YELLOW_COLOR);
+        resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        //restart button
+        JButton reiniciarBotao=new JButton("Jogar Novamente");
+        reiniciarBotao.setBackground(constantes.GREEN_COLOR);
+        reiniciarBotao.addActionListener(this);
+
+
+        resultDialog.add(resultLabel);
+        resultDialog.add(reiniciarBotao);
+
     }
-    public void resetarJogo(){
-         System.out.println("jogo resetado");
-    }
-
-
-
-
-
-
-
-
-
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
+
+    public void resetarJogo(){
+
+
+    }
+
 }
