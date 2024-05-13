@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class telaGui extends JFrame implements ActionListener {
     //contadores
-    int X_player,O_player,moveCounter;
+    int X_Pontos,O_Pontos,contadorMovimento;
 
     private JLabel virarRotulo,placar,resultLabel;
     private JButton[][]board;
@@ -26,7 +26,7 @@ public class telaGui extends JFrame implements ActionListener {
       getContentPane().setBackground(constantes.BLACK_COLOR);
 
       criarResultado();
-      board=new  JButton[3][3];
+      board=new JButton[3][3];
       PrimeiroJogador=true;
       adicionarComponente();
 
@@ -34,7 +34,7 @@ public class telaGui extends JFrame implements ActionListener {
 
     }
 
-    public void adicionarComponente(){
+    private void adicionarComponente(){
         //barra superior
         JLabel barraSuperior=new JLabel();
         barraSuperior.setOpaque(true);
@@ -116,7 +116,7 @@ public class telaGui extends JFrame implements ActionListener {
 
 
     }
-    public void criarResultado(){
+    private void criarResultado(){
         resultDialog=new JDialog();
         resultDialog.getContentPane().setBackground(constantes.BLACK_COLOR);
         resultDialog.setResizable(false);
@@ -150,12 +150,84 @@ public class telaGui extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+       String comando=e.getActionCommand();
+
+    if(comando.equals("Reiniciar") || comando.equals("jogar novamente")){
+        //reiniciar o jogo
+         resetarJogo();
+
+         //somente zerar a pontuacao
+         if (comando.equals("Reiniciar")){
+             X_Pontos=O_Pontos=0;
+         }
+
+         if(comando.equals("jogar novamente")){
+             resultDialog.setVisible(false);
+
+
+        }
+
+    }else{
+        //movimento do jogador
+        JButton botao=(JButton) e.getSource();
+        if(botao.getText().equals("")){
+            contadorMovimento++;
+            //marca o botao  com x/o somente se ele ainda tiver sido selecionado
+            if (PrimeiroJogador){
+                //Primeiro Jogador (X)
+                botao.setText(constantes.X_LABEL);
+                botao.setForeground(constantes.GREEN_COLOR);
+
+                //alternar a vez no rótulo
+                virarRotulo.setText(constantes.O_LABEL);
+                virarRotulo.setBackground(constantes.YELLOW_COLOR);
+
+                //alternar o jogador
+                PrimeiroJogador=false;
+
+
+            }else{
+                //segundo Jogador (O)
+                botao.setText(constantes.O_LABEL);
+                botao.setForeground(constantes.YELLOW_COLOR);
+
+                //alternar a vez no rótulo
+                virarRotulo.setText(constantes.X_LABEL);
+                virarRotulo.setBackground(constantes.GREEN_COLOR);
+
+                //alterar jogador
+                PrimeiroJogador=true;
+            }
+            //checkando condiçoes de vitoria
+            if (PrimeiroJogador){
+                //verificar se a ultima jogada de O foi o lance vencedor
+                verificarVitoriaO();
+
+            }else{
+                //verificar se a ultima jogada de X foi o lance vencedor
+                verificarVitoriaX();
+            }
+            //checkando empate
+            verificarEmpate();
+            //atualizando placar
+            placar.setText("X: "+X_Pontos+" | O: "+O_Pontos);
+        }
+        //testar esses métodos
+        repaint();
+        revalidate();
+    }
 
     }
+    private void verificarVitoriaX(){
+
+
+    }
+    private void verificarVitoriaO(){}
+    private void verificarEmpate(){}
+
 
     public void resetarJogo(){
 
 
-    }
 
-}
+}}
