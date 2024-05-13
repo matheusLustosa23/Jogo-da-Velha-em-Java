@@ -12,7 +12,7 @@ public class telaGui extends JFrame implements ActionListener {
     int X_Pontos,O_Pontos,contadorMovimento;
 
     private JLabel virarRotulo,placar,resultLabel;
-    private JButton[][]board;
+    private JButton[][]tabuleiro;
     private JDialog resultDialog;
     private boolean PrimeiroJogador;
 
@@ -23,10 +23,10 @@ public class telaGui extends JFrame implements ActionListener {
       setResizable(false);
       setLocationRelativeTo(null);
       setLayout(null);
-      getContentPane().setBackground(constantes.BLACK_COLOR);
+      getContentPane().setBackground(constantes.BLUE_COLOR);
 
       criarResultado();
-      board=new JButton[3][3];
+      tabuleiro=new JButton[3][3];
       PrimeiroJogador=true;
       adicionarComponente();
 
@@ -77,8 +77,8 @@ public class telaGui extends JFrame implements ActionListener {
                 );
 
        //criação do  tabuleiro
-        for(int i=0;i<board.length;i++){
-            for(int j=0;j<board[i].length;j++){
+        for(int i=0;i<tabuleiro.length;i++){
+            for(int j=0;j<tabuleiro[i].length;j++){
 
                 JButton botao=new JButton();
                 botao.setFont(new Font("Arial",Font.PLAIN,180));
@@ -89,8 +89,8 @@ public class telaGui extends JFrame implements ActionListener {
 
 
                 //adicionando butões
-                board[i][j]=botao;
-                boardPanel.add(board[i][j]);
+                tabuleiro[i][j]=botao;
+                boardPanel.add(tabuleiro[i][j]);
             }
         }
     //botão de resetar
@@ -118,7 +118,7 @@ public class telaGui extends JFrame implements ActionListener {
     }
     private void criarResultado(){
         resultDialog=new JDialog();
-        resultDialog.getContentPane().setBackground(constantes.BLACK_COLOR);
+        resultDialog.getContentPane().setBackground(constantes.WHITE_COLOR);
         resultDialog.setResizable(false);
         resultDialog.setTitle("Resultado");
         resultDialog.setSize(constantes.DIALOG_SIZE);
@@ -134,12 +134,12 @@ public class telaGui extends JFrame implements ActionListener {
         //result label
         resultLabel=new JLabel();
         resultLabel.setFont(new Font("Dialog",Font.BOLD,18));
-        resultLabel.setForeground(constantes.YELLOW_COLOR);
+        resultLabel.setForeground(constantes.BLACK_COLOR);
         resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
         //restart button
         JButton reiniciarBotao=new JButton("Jogar Novamente");
-        reiniciarBotao.setBackground(constantes.GREEN_COLOR);
+        reiniciarBotao.setBackground(constantes.BLUE_COLOR);
         reiniciarBotao.addActionListener(this);
 
 
@@ -219,6 +219,19 @@ public class telaGui extends JFrame implements ActionListener {
 
     }
     private void verificarVitoriaX(){
+      String resultado="X venceu!";
+      //verificando linhas
+        for (int linha=0;linha<tabuleiro.length;linha++){
+            if (tabuleiro[linha][0].getText().equals("X") && tabuleiro[linha][1].getText().equals("X") && tabuleiro[linha][2].getText().equals("X")){
+                resultLabel.setText(resultado);
+                //exibir resultado
+                resultDialog.setVisible(true);
+                //atualizar pontuaçao
+                X_Pontos++;
+
+            }
+        }
+
 
 
     }

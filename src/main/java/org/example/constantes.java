@@ -9,6 +9,7 @@ public class constantes {
     public static final Color GREEN_COLOR=Color.decode("#00FF00");//verde
     public static final Color YELLOW_COLOR=Color.decode("#FFFF00");//amarelo
     public static final Color WHITE_COLOR=Color.decode("#FFFFFF");//branco
+    public static final Color BLUE_COLOR=Color.decode("#00D7FF");
 
 
 
