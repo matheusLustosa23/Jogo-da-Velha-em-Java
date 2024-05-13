@@ -302,10 +302,18 @@ public class telaGui extends JFrame implements ActionListener {
             O_Pontos++;
         }
     }
-    private void verificarEmpate(){}
+    private void verificarEmpate(){
+        //se hoube 9 jogadas , e nenhum vencedor ,significa que houve um empate
+        if (contadorMovimento>=9){
+            resultLabel.setText("Empate!");
+            resultDialog.setVisible(true);
+
+        }
+    }
 
 
     public void resetarJogo(){
+
 
 
 
