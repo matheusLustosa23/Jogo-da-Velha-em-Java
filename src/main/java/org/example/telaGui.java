@@ -123,6 +123,7 @@ public class telaGui extends JFrame implements ActionListener {
         resultDialog.setTitle("Resultado");
         resultDialog.setSize(constantes.DIALOG_SIZE);
         resultDialog.setLocationRelativeTo(this);
+        resultDialog.setModal(true);
         resultDialog.setLayout(new GridLayout(2,1));
         resultDialog.addWindowListener(new WindowAdapter() {
             @Override
@@ -152,7 +153,7 @@ public class telaGui extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
        String comando=e.getActionCommand();
 
-    if(comando.equals("Reiniciar") || comando.equals("jogar novamente")){
+    if(comando.equals("Reiniciar") || comando.equals("Jogar Novamente")){
         //reiniciar o jogo
          resetarJogo();
 
@@ -161,7 +162,7 @@ public class telaGui extends JFrame implements ActionListener {
              X_Pontos=O_Pontos=0;
          }
 
-         if(comando.equals("jogar novamente")){
+         if(comando.equals("Jogar Novamente")){
              resultDialog.setVisible(false);
 
 
@@ -313,8 +314,21 @@ public class telaGui extends JFrame implements ActionListener {
 
 
     public void resetarJogo(){
+        //reinicia voltando a vez para o jogador X
+        PrimeiroJogador=true;
+        virarRotulo.setText(constantes.X_LABEL);
+        virarRotulo.setBackground(constantes.GREEN_COLOR);
+        //reiniciar placar
+        placar.setText(constantes.PLACAR_LABEL);
+        //reiniciar contador
+        contadorMovimento=0;
+        //reiniciar tabuleiro
+        for(int i=0;i<tabuleiro.length;i++){
+            for (int j=0;j<tabuleiro[i].length;j++){
+                tabuleiro[i][j].setText("");
+            }
+        }
 
 
-
-
-}}
+    }
+}
