@@ -264,7 +264,44 @@ public class telaGui extends JFrame implements ActionListener {
 
 
     }
-    private void verificarVitoriaO(){}
+    private void verificarVitoriaO(){
+        String resultado="O venceu!";
+        //verificando linhas
+        for (int linha=0;linha<tabuleiro.length;linha++){
+            if (tabuleiro[linha][0].getText().equals("O") && tabuleiro[linha][1].getText().equals("O") && tabuleiro[linha][2].getText().equals("O")){
+                resultLabel.setText(resultado);
+                //exibir resultado
+                resultDialog.setVisible(true);
+                //atualizar pontos
+                O_Pontos++;
+            }
+        }
+        //verificando colunas
+        for(int coluna=0;coluna<tabuleiro.length;coluna++){
+            if (tabuleiro[0][coluna].getText().equals("O") && tabuleiro[1][coluna].getText().equals("O") && tabuleiro[2][coluna].getText().equals("O")){
+                resultLabel.setText(resultado);
+                //exibir resultado
+                resultDialog.setVisible(true);
+                //atualizar pontos
+                O_Pontos++;
+            }
+        }
+        //verificando Diagonais
+        if (tabuleiro[0][0].getText().equals("O") && tabuleiro[1][1].getText().equals("O") && tabuleiro[2][2].getText().equals("O")){
+            resultLabel.setText(resultado);
+            //exibir resultado
+            resultDialog.setVisible(true);
+            //atualizar pontos
+            O_Pontos++;
+        }
+        if (tabuleiro[0][2].getText().equals("O") && tabuleiro[1][1].getText().equals("O") && tabuleiro[2][0].getText().equals("O")){
+            resultLabel.setText(resultado);
+            //exibir resultado
+            resultDialog.setVisible(true);
+            //atualizar pontos
+            O_Pontos++;
+        }
+    }
     private void verificarEmpate(){}
 
 
