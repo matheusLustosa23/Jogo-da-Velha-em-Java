@@ -23,7 +23,7 @@ public class telaGui extends JFrame implements ActionListener {
       setResizable(false);
       setLocationRelativeTo(null);
       setLayout(null);
-      getContentPane().setBackground(constantes.BLUE_COLOR);
+      getContentPane().setBackground(constantes.GREEN_COLOR);
 
       criarResultado();
       tabuleiro=new JButton[3][3];
@@ -47,7 +47,7 @@ public class telaGui extends JFrame implements ActionListener {
         virarRotulo.setFont(new Font("Arial",Font.PLAIN,40));
         virarRotulo.setPreferredSize(new Dimension(100,virarRotulo.getPreferredSize().height));
         virarRotulo.setOpaque(true);
-        virarRotulo.setBackground(constantes.GREEN_COLOR);
+        virarRotulo.setBackground(constantes.BLUE_COLOR);
         virarRotulo.setForeground(constantes.BLACK_COLOR);
         virarRotulo.setBounds(
                 (constantes.FRAME_SIZE.width-virarRotulo.getPreferredSize().width)/2,
@@ -98,6 +98,7 @@ public class telaGui extends JFrame implements ActionListener {
         resetarButao.setFont(new Font("Arial",Font.PLAIN,24));
         resetarButao.addActionListener(this);
         resetarButao.setBackground(constantes.RED_COLOR);
+        resetarButao.setForeground(constantes.WHITE_COLOR);
         resetarButao.setBounds((constantes.FRAME_SIZE.width-resetarButao.getPreferredSize().width)/2,
                 constantes.FRAME_SIZE.height-100,
                 resetarButao.getPreferredSize().width,
@@ -140,6 +141,7 @@ public class telaGui extends JFrame implements ActionListener {
 
         //restart button
         JButton reiniciarBotao=new JButton("Jogar Novamente");
+        reiniciarBotao.setForeground(constantes.WHITE_COLOR);
         reiniciarBotao.setBackground(constantes.BLUE_COLOR);
         reiniciarBotao.addActionListener(this);
 
@@ -177,7 +179,7 @@ public class telaGui extends JFrame implements ActionListener {
             if (PrimeiroJogador){
                 //Primeiro Jogador (X)
                 botao.setText(constantes.X_LABEL);
-                botao.setForeground(constantes.GREEN_COLOR);
+                botao.setForeground(constantes.BLUE_COLOR);
 
                 //alternar a vez no rótulo
                 virarRotulo.setText(constantes.O_LABEL);
@@ -194,7 +196,7 @@ public class telaGui extends JFrame implements ActionListener {
 
                 //alternar a vez no rótulo
                 virarRotulo.setText(constantes.X_LABEL);
-                virarRotulo.setBackground(constantes.GREEN_COLOR);
+                virarRotulo.setBackground(constantes.BLUE_COLOR);
 
                 //alterar jogador
                 PrimeiroJogador=true;
