@@ -97,7 +97,7 @@ public class telaGui extends JFrame implements ActionListener {
         JButton resetarButao=new JButton("Reiniciar");
         resetarButao.setFont(new Font("Arial",Font.PLAIN,24));
         resetarButao.addActionListener(this);
-        resetarButao.setBackground(constantes.GREEN_COLOR);
+        resetarButao.setBackground(constantes.RED_COLOR);
         resetarButao.setBounds((constantes.FRAME_SIZE.width-resetarButao.getPreferredSize().width)/2,
                 constantes.FRAME_SIZE.height-100,
                 resetarButao.getPreferredSize().width,
@@ -231,6 +231,35 @@ public class telaGui extends JFrame implements ActionListener {
 
             }
         }
+        //verificando Colunas
+        for (int coluna=0;coluna<tabuleiro.length;coluna++){
+            if(tabuleiro[0][coluna].getText().equals("X") && tabuleiro[1][coluna].getText().equals("X") && tabuleiro[2][coluna].getText().equals("X")){
+                resultLabel.setText(resultado);
+                //exibir resultado
+                resultDialog.setVisible(true);
+                //atualizar pontos
+                X_Pontos++;
+            }
+        }
+        //verificando diagonais
+
+            if (tabuleiro[0][0].getText().equals("X") && tabuleiro[1][1].getText().equals("X") && tabuleiro[2][2].getText().equals("X")){
+                resultLabel.setText(resultado);
+                //exibir resultado
+                resultDialog.setVisible(true);
+                //atualizar pontos
+                X_Pontos++;
+            }
+            if (tabuleiro[0][2].getText().equals("X") && tabuleiro[1][1].getText().equals("X") && tabuleiro[2][0].getText().equals("X")){
+                resultLabel.setText(resultado);
+                //exibir resultado
+                resultDialog.setVisible(true);
+                //atualizar pontos
+                X_Pontos++;
+            }
+
+
+
 
 
 

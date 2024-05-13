@@ -5,11 +5,12 @@ import java.awt.*;
 public class constantes {
     //cores
 
-    public static final Color BLACK_COLOR=Color.decode("#000001");//black
-    public static final Color GREEN_COLOR=Color.decode("#00FF00");//verde
-    public static final Color YELLOW_COLOR=Color.decode("#FFFF00");//amarelo
-    public static final Color WHITE_COLOR=Color.decode("#FFFFFF");//branco
+    public static final Color BLACK_COLOR=Color.decode("#000001");
+    public static final Color GREEN_COLOR=Color.decode("#00FF00");
+    public static final Color YELLOW_COLOR=Color.decode("#FFFF00");
+    public static final Color WHITE_COLOR=Color.decode("#FFFFFF");
     public static final Color BLUE_COLOR=Color.decode("#00D7FF");
+    public static final Color RED_COLOR=Color.decode("#FF0000");
 
 
 
