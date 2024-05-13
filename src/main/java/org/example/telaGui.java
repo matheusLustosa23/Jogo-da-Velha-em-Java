@@ -44,7 +44,7 @@ public class telaGui extends JFrame implements ActionListener {
         //virar Rótulo
         virarRotulo=new JLabel(constantes.X_LABEL);
         virarRotulo.setHorizontalAlignment(SwingConstants.CENTER);
-        virarRotulo.setFont(new Font("Arial",Font.PLAIN,25));
+        virarRotulo.setFont(new Font("Arial",Font.PLAIN,40));
         virarRotulo.setPreferredSize(new Dimension(100,virarRotulo.getPreferredSize().height));
         virarRotulo.setOpaque(true);
         virarRotulo.setBackground(constantes.GREEN_COLOR);
