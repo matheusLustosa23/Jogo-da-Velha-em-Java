@@ -97,7 +97,7 @@ public class telaGui extends JFrame implements ActionListener {
         JButton resetarButao=new JButton("Reiniciar");
         resetarButao.setFont(new Font("Arial",Font.PLAIN,24));
         resetarButao.addActionListener(this);
-        resetarButao.setBackground(constantes.RED_COLOR);
+        resetarButao.setBackground(constantes.GRAY_COLOR);
         resetarButao.setForeground(constantes.WHITE_COLOR);
         resetarButao.setBounds((constantes.FRAME_SIZE.width-resetarButao.getPreferredSize().width)/2,
                 constantes.FRAME_SIZE.height-100,
@@ -141,8 +141,8 @@ public class telaGui extends JFrame implements ActionListener {
 
         //restart button
         JButton reiniciarBotao=new JButton("Jogar Novamente");
-        reiniciarBotao.setForeground(constantes.BLUE_COLOR);
-        reiniciarBotao.setBackground(constantes.WHITE_COLOR);
+        reiniciarBotao.setForeground(constantes.WHITE_COLOR);
+        reiniciarBotao.setBackground(constantes.GRAY_COLOR);
         reiniciarBotao.addActionListener(this);
 
 
