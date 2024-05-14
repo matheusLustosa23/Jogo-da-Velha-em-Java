@@ -119,7 +119,7 @@ public class telaGui extends JFrame implements ActionListener {
     }
     private void criarResultado(){
         resultDialog=new JDialog();
-        resultDialog.getContentPane().setBackground(constantes.WHITE_COLOR);
+        resultDialog.getContentPane().setBackground(constantes.BLACK_COLOR);
         resultDialog.setResizable(false);
         resultDialog.setTitle("Resultado");
         resultDialog.setSize(constantes.DIALOG_SIZE);
@@ -141,8 +141,8 @@ public class telaGui extends JFrame implements ActionListener {
 
         //restart button
         JButton reiniciarBotao=new JButton("Jogar Novamente");
-        reiniciarBotao.setForeground(constantes.WHITE_COLOR);
-        reiniciarBotao.setBackground(constantes.BLUE_COLOR);
+        reiniciarBotao.setForeground(constantes.BLUE_COLOR);
+        reiniciarBotao.setBackground(constantes.WHITE_COLOR);
         reiniciarBotao.addActionListener(this);
 
 
@@ -228,6 +228,7 @@ public class telaGui extends JFrame implements ActionListener {
             if (tabuleiro[linha][0].getText().equals("X") && tabuleiro[linha][1].getText().equals("X") && tabuleiro[linha][2].getText().equals("X")){
                 resultLabel.setText(resultado);
                 //exibir resultado
+                resultDialog.getContentPane().setBackground(constantes.BLUE_COLOR);
                 resultDialog.setVisible(true);
                 //atualizar pontuaçao
                 X_Pontos++;
@@ -239,6 +240,7 @@ public class telaGui extends JFrame implements ActionListener {
             if(tabuleiro[0][coluna].getText().equals("X") && tabuleiro[1][coluna].getText().equals("X") && tabuleiro[2][coluna].getText().equals("X")){
                 resultLabel.setText(resultado);
                 //exibir resultado
+                resultDialog.getContentPane().setBackground(constantes.BLUE_COLOR);
                 resultDialog.setVisible(true);
                 //atualizar pontos
                 X_Pontos++;
@@ -249,6 +251,7 @@ public class telaGui extends JFrame implements ActionListener {
             if (tabuleiro[0][0].getText().equals("X") && tabuleiro[1][1].getText().equals("X") && tabuleiro[2][2].getText().equals("X")){
                 resultLabel.setText(resultado);
                 //exibir resultado
+                resultDialog.getContentPane().setBackground(constantes.BLUE_COLOR);
                 resultDialog.setVisible(true);
                 //atualizar pontos
                 X_Pontos++;
@@ -256,6 +259,7 @@ public class telaGui extends JFrame implements ActionListener {
             if (tabuleiro[0][2].getText().equals("X") && tabuleiro[1][1].getText().equals("X") && tabuleiro[2][0].getText().equals("X")){
                 resultLabel.setText(resultado);
                 //exibir resultado
+                resultDialog.getContentPane().setBackground(constantes.BLUE_COLOR);
                 resultDialog.setVisible(true);
                 //atualizar pontos
                 X_Pontos++;
@@ -274,6 +278,8 @@ public class telaGui extends JFrame implements ActionListener {
             if (tabuleiro[linha][0].getText().equals("O") && tabuleiro[linha][1].getText().equals("O") && tabuleiro[linha][2].getText().equals("O")){
                 resultLabel.setText(resultado);
                 //exibir resultado
+
+                resultDialog.getContentPane().setBackground(constantes.YELLOW_COLOR);
                 resultDialog.setVisible(true);
                 //atualizar pontos
                 O_Pontos++;
@@ -284,6 +290,8 @@ public class telaGui extends JFrame implements ActionListener {
             if (tabuleiro[0][coluna].getText().equals("O") && tabuleiro[1][coluna].getText().equals("O") && tabuleiro[2][coluna].getText().equals("O")){
                 resultLabel.setText(resultado);
                 //exibir resultado
+
+                resultDialog.getContentPane().setBackground(constantes.YELLOW_COLOR);
                 resultDialog.setVisible(true);
                 //atualizar pontos
                 O_Pontos++;
@@ -293,6 +301,8 @@ public class telaGui extends JFrame implements ActionListener {
         if (tabuleiro[0][0].getText().equals("O") && tabuleiro[1][1].getText().equals("O") && tabuleiro[2][2].getText().equals("O")){
             resultLabel.setText(resultado);
             //exibir resultado
+
+            resultDialog.getContentPane().setBackground(constantes.YELLOW_COLOR);
             resultDialog.setVisible(true);
             //atualizar pontos
             O_Pontos++;
@@ -300,6 +310,8 @@ public class telaGui extends JFrame implements ActionListener {
         if (tabuleiro[0][2].getText().equals("O") && tabuleiro[1][1].getText().equals("O") && tabuleiro[2][0].getText().equals("O")){
             resultLabel.setText(resultado);
             //exibir resultado
+
+            resultDialog.getContentPane().setBackground(constantes.YELLOW_COLOR);
             resultDialog.setVisible(true);
             //atualizar pontos
             O_Pontos++;
@@ -308,6 +320,8 @@ public class telaGui extends JFrame implements ActionListener {
     private void verificarEmpate(){
         //se hoube 9 jogadas , e nenhum vencedor ,significa que houve um empate
         if (contadorMovimento>=9){
+            resultDialog.getContentPane().setBackground(constantes.RED_COLOR);
+
             resultLabel.setText("Empate!");
             resultDialog.setVisible(true);
 
@@ -319,7 +333,7 @@ public class telaGui extends JFrame implements ActionListener {
         //reinicia voltando a vez para o jogador X
         PrimeiroJogador=true;
         virarRotulo.setText(constantes.X_LABEL);
-        virarRotulo.setBackground(constantes.GREEN_COLOR);
+        virarRotulo.setBackground(constantes.BLUE_COLOR);
         //reiniciar placar
         placar.setText(constantes.PLACAR_LABEL);
         //reiniciar contador
